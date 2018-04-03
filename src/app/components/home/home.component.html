@@ -1,0 +1,20 @@
+<button routerLink="/movies/new"  class="btn btn-primary">Add a new movie</button>
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<td>Movie Title</td>
+		<td colspan="2">Available Actions</td>
+	</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let movie of movies">
+			<td>{{ movie.m_title }}</td>
+			<td>
+				<a routerLink="['/:id', movie._id]" class="btn btn-primary">Read Review</a> | 
+				<a routerLink="movies/review/:id" class="btn btn-danger">Write Review</a>
+				<!-- <td><button (click)="deleteMovie(movie._id)"  class="btn btn-danger">Delete</button></td> -->
+			</td>
+		</tr>
+	</tbody>
+</table>
+
